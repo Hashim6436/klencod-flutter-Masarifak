@@ -1,0 +1,21 @@
+تقرير الإصدار v38 — إصلاح OTA وتقليل تداخل renderAll
+
+التغييرات الفعلية:
+- إزالة سكربت v37 الإضافي الذي كان يلف window.renderAll ويعيد حساب عنوان أعلى تصنيف بعد كل رسم.
+- دمج تحديث homeDonutTopCatTitle وhomeDonutTopCatSub داخل render الأساسي بجوار حساب catRanked نفسه؛ بذلك لا توجد إعادة حساب منفصلة متأخرة لهذه البطاقة.
+- إزالة شرط تسجيل Google من فحص تحديثات OTA؛ manifest العام في appConfig/androidUpdate يقرأ وفق قاعدة Firestore العامة.
+- فصل قواعد Firestore وStorage في firestore.rules وstorage.rules، وتحديث تعليمات النشر.
+- تحديث إصدار Android إلى 38.0.0. لم يتم تغيير schemaVersion الخاص ببيانات المستخدمين.
+
+مهم بشأن renderAll:
+- تم تحويل نقطة الاستدعاء النشطة النهائية من _renderAllV107 إلى _renderAllBase لتفادي سلسلة wrappers التاريخية عند الرسم.
+- تعريفات التحسينات التاريخية بقيت في الملف كمصدر غير مستدعى في نقطة العرض النشطة؛ لم تحذف عشوائيًا قبل إثبات عدم اعتماد وظائف أخرى عليها. هذا يعني أن تنظيف جميع الشيفرات الميتة لم يكتمل بعد، ولا أدعي عكس ذلك.
+
+اختبارات لازمة قبل اعتماد الإصدار:
+- فحص JavaScript syntax لكل script block.
+- فحص XML وJSON وZIP.
+- لا يمكن من بيئة التحرير نشر Firebase Rules أو التحقق من مشروع Firebase الحقيقي.
+- لا يمكن إثبات Google Auth / Firestore / OTA / SMS runtime دون APK مبني واختبار جهاز فعلي.
+- لم يتم بناء APK في هذه البيئة لعدم توفر Android SDK/Gradle Wrapper.
+
+نتيجة تشغيل tools/verify_v38.js بعد حذف الطبقات: PASS — 7 كتل JavaScript، 300 معرّف HTML ثابت بلا تكرار، 274 تصريح function بلا تكرار، اختبارات FinancialBreakdown والهجرة القديمة PASS، والتحقق من إزالة أسماء wrappers القديمة PASS.

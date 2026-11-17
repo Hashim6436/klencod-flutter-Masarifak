@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "965116683277",
+    "project_id": "masarifak-aab36",
+    "storage_bucket": "masarifak-aab36.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965116683277:android:fd724f9acf4bb9c6e0e144",
+        "android_client_info": {
+          "package_name": "com.masarifak.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965116683277-4dtaujijdqbgio069eg3u4taqlhkummo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masarifak.app",
+            "certificate_hash": "03c165e49e1080459fa8257ff256d32d84525a62"
+          }
+        },
+        {
+          "client_id": "965116683277-sjsf7taneo0ornvtji9qup4esjkvhgrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmbvi3D2RtOQoIPA6-ByW20-YQvNp19c0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965116683277-sjsf7taneo0ornvtji9qup4esjkvhgrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

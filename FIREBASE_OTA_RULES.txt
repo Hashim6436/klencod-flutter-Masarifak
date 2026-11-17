@@ -1,0 +1,13 @@
+تعليمات نشر صلاحيات تحديث التطبيق — مصاريفك v38
+
+مهم: لا يمكن نشر القواعد من ملف ZIP. يجب لصقها ونشرها من Firebase Console للمشروع masarifak-aab36.
+
+1) Firestore Database > Rules: افتح الملف firestore.rules في جذر المشروع، وانسخ محتواه كاملًا إلى محرر Firestore Rules ثم اضغط Publish.
+2) Storage > Rules: افتح الملف storage.rules في جذر المشروع، وانسخ محتواه كاملًا إلى محرر Storage Rules ثم اضغط Publish.
+3) لا تضع قواعد Storage داخل محرر Firestore أو العكس.
+4) بعد النشر، افتح التطبيق واضغط فحص التحديثات. قراءة appConfig/androidUpdate عامة ولا تتطلب تسجيل Google؛ أما بيانات المستخدمين فتبقى محمية حسب UID.
+
+معرّف الناشر المسموح له برفع APK وتحديث manifest هو: DZQBjkF778TGL9JoEQi1GSJ6jim1
+تأكد أن هذا UID هو حساب الناشر الصحيح قبل النشر. لا تغيّر قواعد users/{userId} ولا تفتح قراءة بيانات المستخدمين للعامة.
+
+لم يتم النشر تلقائيًا؛ يحتاج ذلك صلاحية دخول إلى Firebase Console.

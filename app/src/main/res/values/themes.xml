@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.Masarifak" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">#EAF4FF</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:statusBarColor">#EAF4FF</item>
+        <item name="android:navigationBarColor">#EAF4FF</item>
+            <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowSplashScreenBackground">#EAF4FF</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher</item>
+    </style>
+</resources>
